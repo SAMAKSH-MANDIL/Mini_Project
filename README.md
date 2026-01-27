@@ -1,73 +1,197 @@
-# Welcome to your Lovable project
 
-## Project info
+# AttendTrack – Smart Attendance Tracker
 
-**URL**: https://lovable.dev/projects/438383ba-0879-4e7f-8ed1-bdbb2f425580
 
-## How can I edit this code?
+  <h3>Track and predict your attendance percentage with ease</h3>
+  <p>A comprehensive web application for students to calculate attendance, plan holidays, and achieve target percentages</p>
 
-There are several ways of editing your application.
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/438383ba-0879-4e7f-8ed1-bdbb2f425580) and start prompting.
+## 🌟 Features
 
-Changes made via Lovable will be committed automatically to this repo.
+### 📊 Attendance Calculator
+- Calculate your current attendance percentage instantly
+- Track total classes conducted vs. classes attended
+- Visual representation of your attendance status
+- Color-coded indicators:
+  - 🟢 Green: ≥ 75%
+  - 🟡 Yellow: 65–75%
+  - 🔴 Red: < 65%
 
-**Use your preferred IDE**
+### 📅 Holiday Planner
+- Predict how taking holidays affects your attendance
+- Day-by-day breakdown of attendance decline
+- Interactive charts showing:
+  - Attendance trend over holiday days
+  - Distribution of attended vs. missed classes
+- Detailed table with percentage decrements per day
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### 🎯 Target Achievement
+- Set custom attendance percentage goals
+- Calculate classes needed to reach your target
+- See how many classes you can safely skip if above target
+- Visual progress tracking with:
+  - Bar charts showing projected percentages
+  - Progress indicators
+  - Personalized recommendations
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### ⚙️ Settings & Data Management
+- Set and save custom target percentages
+- View comprehensive attendance statistics
+- Reset all data when needed (with confirmation)
+- Data persists using browser localStorage
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 🚀 Getting Started
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn package manager
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Installation
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd attendtrack
+```
+2.Install dependencies:
+```bash
+npm install
+```
+3.Start the development server:
+```bash
 npm run dev
 ```
+4.Open your browser and navigate to:
+```bash
+http://localhost:8080
+```
+## 🛠️ Tech Stack
 
-**Edit a file directly in GitHub**
+- **Framework:** React 18 with TypeScript  
+- **Build Tool:** Vite  
+- **Routing:** React Router DOM v6  
+- **UI Components:**
+  - Radix UI (Accessible component primitives)
+  - shadcn/ui (Customizable UI components)
+- **Charts:** Recharts  
+- **Styling:** Tailwind CSS  
+- **State Management:** React Hooks  
+- **Data Persistence:** localStorage  
+- **Icons:** Lucide React  
+- **Notifications:** Sonner (toast notifications)
+  
+## 📁 Project Structure
+```bash
+src/
+├── components/
+│ ├── ui/ # Reusable UI components
+│ ├── Navigation.tsx # Main navigation
+│ └── NavLink.tsx # Custom NavLink wrapper
+├── hooks/
+│ ├── useAttendance.ts # Attendance calculation logic
+│ ├── use-toast.ts # Toast notifications
+│ └── use-mobile.tsx # Mobile detection
+├── pages/
+│ ├── Home.tsx
+│ ├── HolidayPlanner.tsx
+│ ├── TargetAchievement.tsx
+│ ├── Settings.tsx
+│ └── NotFound.tsx
+├── lib/
+│ └── utils.ts
+├── App.tsx
+├── main.tsx
+└── index.css
+```
+## 🎨 Design System
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- HSL-based color palette
+- Light & Dark mode support
+- Gradient-based UI accents
+- Soft and medium shadows
+- Inter font family
+- Consistent border radius (1rem)
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📱 Responsive Design
 
-## What technologies are used for this project?
+- Fully responsive for mobile, tablet, and desktop
+- Mobile-friendly navigation
+- Touch-optimized controls
+- Adaptive charts and tables
 
-This project is built with:
+---
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🔒 Data Privacy
 
-## How can I deploy this project?
+- All data is stored locally in the browser
+- No external servers or databases
+- Data persists across sessions
+- Can be cleared anytime from Settings
 
-Simply open [Lovable](https://lovable.dev/projects/438383ba-0879-4e7f-8ed1-bdbb2f425580) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
+## 🧮 Calculation Logic
+### Attendance Percentage
+```bash
+(Current Classes Attended / Total Classes) × 100
+```
+### Holiday Impact
+```bash
+New Total = Current Total + (Classes per Day × Days)
+New % = (Classes Attended / New Total) × 100
+Decrement = Previous % - New %
+```
+### Target Achievement
+#### If Above Target
+```bash
+Calculate maximum classes that can be skipped
+while maintaining percentage ≥ target
+```
+#### If Below Target
+```bash
+Calculate minimum consecutive classes needed
+to reach target percentage
+```
 
-Yes, you can!
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 📦 Available Scripts
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+```bash
+npm run dev        # Start development server
+npm run build      # Build for production
+npm run build:dev  # Build for development
+npm run preview    # Preview production build
+npm run lint       # Lint the code
+```
+## 🌐 Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+---
+
+## 📄 License
+
+This project is open source and available under the **MIT License**.
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome.  
+Feel free to open an issue or submit a pull request.
+
+---
+
+## 👨‍💻 Developer
+
+Built with ❤️ for students who want to manage their attendance smartly.
