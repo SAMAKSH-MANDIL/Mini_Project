@@ -1,5 +1,5 @@
 
-# AttendTrack – Smart Attendance Tracker
+# AttendanceHelper – Smart Attendance Tracker
 
 
   <h3>Track and predict your attendance percentage with ease</h3>
