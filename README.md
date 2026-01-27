@@ -1,5 +1,5 @@
 
-# AttendTrack – Smart Attendance Tracker
+# AttendanceHelper – Smart Attendance Tracker
 
 
   <h3>Track and predict your attendance percentage with ease</h3>
@@ -55,7 +55,7 @@
 1. Clone the repository:
 ```bash
 git clone <repository-url>
-cd attendtrack
+cd AttendanceHelper
 ```
 2.Install dependencies:
 ```bash
